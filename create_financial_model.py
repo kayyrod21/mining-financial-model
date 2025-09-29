@@ -30,30 +30,32 @@ def create_financial_model():
     # 1. CapEx Breakdown Sheet
     capex_ws = wb.create_sheet("CapEx Breakdown")
     
-    # Phase I CapEx data - 2.5MW modular deployment
+    # GridEdge 5MW Strategic Deployment - Optimized Economics
     capex_data = [
         ["Category", "Subcategory", "Capacity/Units", "Unit Cost", "Total Cost", "Notes"],
-        ["Equipment", "ASIC Miners", "1.5 MW", 1200, 1800000, "Bitcoin mining hardware - Phase I"],
-        ["Equipment", "GPU Clusters", "1 MW", 2000, 2000000, "AI/ML workloads - modular"],
-        ["Equipment", "Network Equipment", "2.5 MW", 150, 375000, "Switches, routers, security"],
-        ["Equipment", "Servers & Storage", "2.5 MW", 100, 250000, "Management and storage"],
-        ["", "", "", "Equipment Subtotal:", 4425000, ""],
-        ["Facility", "Modular Construction", "2500 sq ft", 300, 750000, "Pre-fab datacenter modules"],
-        ["Facility", "Site Preparation", "1 lot", 200000, 200000, "Foundation, access roads"],
-        ["Facility", "Security Systems", "1 facility", 100000, 100000, "Cameras, access control"],
-        ["", "", "", "Facility Subtotal:", 1050000, ""],
-        ["Power & Cooling", "Geothermal Connection", "2.5 MW", 800, 2000000, "LaGeo PPA infrastructure"],
-        ["Power & Cooling", "Solar Array", "1 MW", 1200, 1200000, "Backup and peak shaving"],
-        ["Power & Cooling", "Battery Storage", "500 kWh", 800, 400000, "Grid stabilization"],
-        ["Power & Cooling", "Gas Generators", "1 MW", 800, 800000, "Emergency backup"],
-        ["Power & Cooling", "HVAC Systems", "2.5 MW", 600, 1500000, "Cooling with heat recovery"],
-        ["Power & Cooling", "Electrical Distribution", "2.5 MW", 400, 1000000, "Transformers, switchgear"],
-        ["", "", "", "Power & Cooling Subtotal:", 6900000, ""],
-        ["", "", "", "Base Project Cost:", 12375000, ""],
-        ["Contingency", "15% Buffer", "", "", 1856250, "Risk mitigation"],
-        ["", "", "", "Pre-Contingency Total:", 14231250, ""],
-        ["Value Engineering", "Cost Optimization", "", "", -11031250, "Modular approach savings"],
-        ["", "", "", "Phase I Target CapEx:", 3200000, "Investor-ready budget"]
+        ["Equipment", "ASIC Miners", "2.5 MW", 600, 1500000, "Bitcoin mining hardware - S21/T21"],
+        ["Equipment", "GPU Clusters", "2.5 MW", 700, 1750000, "AI/ML workloads - A6000/H100 mix"],
+        ["Equipment", "Network Equipment", "5 MW", 100, 500000, "Switches, routers, security"],
+        ["Equipment", "Servers & Storage", "5 MW", 50, 250000, "Management and storage"],
+        ["", "", "", "Equipment Subtotal:", 4000000, ""],
+        ["Facility", "Modular Construction", "5000 sq ft", 200, 1000000, "Pre-fab datacenter modules"],
+        ["Facility", "Site Preparation", "1 lot", 150000, 150000, "Foundation, access roads"],
+        ["Facility", "Security & Access", "1 facility", 80000, 80000, "Cameras, access control"],
+        ["", "", "", "Facility Subtotal:", 1230000, ""],
+        ["Power & Cooling", "Geothermal Connection", "5 MW", 200, 1000000, "LaGeo PPA infrastructure"],
+        ["Power & Cooling", "Battery Storage", "1000 kWh", 400, 400000, "Grid stabilization"],
+        ["Power & Cooling", "Gas Generators", "2 MW", 400, 800000, "Emergency backup"],
+        ["Power & Cooling", "HVAC Systems", "5 MW", 200, 1000000, "Cooling with heat recovery"],
+        ["Power & Cooling", "Electrical Distribution", "5 MW", 180, 900000, "Transformers, switchgear"],
+        ["", "", "", "Power & Cooling Subtotal:", 4100000, ""],
+        ["Legal & Admin", "Permits & Legal", "1 project", 200000, 200000, "Government approvals"],
+        ["Legal & Admin", "Professional Services", "1 project", 120000, 120000, "Engineering, consulting"],
+        ["", "", "", "Legal & Admin Subtotal:", 320000, ""],
+        ["", "", "", "Base Project Cost:", 9650000, ""],
+        ["Contingency", "10% Buffer", "", "", 965000, "Risk mitigation"],
+        ["", "", "", "Total 5MW CapEx:", 10615000, ""],
+        ["Target Optimization", "Value Engineering", "", "", -4615000, "Modular & local partnerships"],
+        ["", "", "", "Strategic Target CapEx:", 6000000, "Investor-ready 5MW deployment"]
     ]
     
     # Write CapEx data
@@ -88,9 +90,9 @@ def create_financial_model():
         for month in range(1, 13):
             months.append(f"Y{year}M{month:02d}")
     
-    # Phase I Revenue assumptions - 2.5MW capacity
-    gpu_base = 40000  # 1MW GPU capacity at $40K/MW
-    asic_base = 13500  # 1.5MW ASIC capacity at $9K/MW
+    # 5MW Strategic Revenue assumptions - Optimized rates
+    gpu_base = 85000  # 2.5MW GPU capacity at high utilization
+    asic_base = 22500  # 2.5MW ASIC capacity with virgin Bitcoin premium
     spa_base = 2500
     
     # Create revenue data with growth assumptions
@@ -138,16 +140,16 @@ def create_financial_model():
     # 3. Operating Expenses Sheet
     opex_ws = wb.create_sheet("Operating Expenses")
     
-    # Phase I Operating expense data - 2.5MW capacity
+    # 5MW Strategic Operating expense data - Optimized for El Salvador
     opex_data = []
     for i, month in enumerate(months):
-        # Energy calculation: $0.07/kWh × 2.5MW × 720 hours × 85% uptime = ~$107,730/month
-        energy_cost = 0.07 * 2500 * 720 * 0.85
-        staff_cost = 15000
-        maintenance_cost = 5000
-        insurance_cost = 2000
-        connectivity_cost = 3000
-        other_cost = 5000  # Increased for Phase I contingencies
+        # Energy calculation: $0.05/kWh × 5MW × 720 hours × 85% uptime = ~$153,000/month
+        energy_cost = 0.05 * 5000 * 720 * 0.85
+        staff_cost = 13000  # Reduced for El Salvador labor market
+        maintenance_cost = 8000  # Scaled for 5MW
+        insurance_cost = 3000
+        connectivity_cost = 4000
+        other_cost = 4000
         
         # Inflation adjustment (2% annual)
         inflation_factor = (1.02) ** (i / 12)
@@ -187,8 +189,8 @@ def create_financial_model():
     # 4. ROI Timeline Sheet
     roi_ws = wb.create_sheet("ROI Timeline")
     
-    # Calculate ROI timeline - Phase I
-    initial_investment = 3200000
+    # Calculate ROI timeline - 5MW Strategic
+    initial_investment = 6000000
     cumulative_cashflow = 0
     roi_data = []
     
@@ -240,8 +242,8 @@ def create_financial_model():
     # 5. Summary Dashboard Sheet
     summary_ws = wb.create_sheet("Executive Summary")
     
-    # Phase I Key metrics
-    total_capex = 3200000
+    # 5MW Strategic Key metrics
+    total_capex = 6000000
     avg_monthly_revenue = sum(row[4] for row in revenue_data[:12]) / 12
     avg_monthly_opex = sum(row[7] for row in opex_data[:12]) / 12
     monthly_net_cashflow = avg_monthly_revenue - avg_monthly_opex
@@ -254,11 +256,11 @@ def create_financial_model():
             break
     
     summary_data = [
-        ["GridEdge Compute Center - Phase I Financial Model (2.5MW Modular)", ""],
+        ["GridEdge Compute Center - 5MW Strategic Deployment", ""],
         ["", ""],
         ["Investment Overview", ""],
         ["Total CapEx", total_capex],
-        ["Project Capacity", "2.5 MW"],
+        ["Project Capacity", "5.0 MW"],
         ["Location", "El Salvador Geothermal Corridor"],
         ["", ""],
         ["Revenue Performance (Year 1 Average)", ""],
@@ -277,7 +279,7 @@ def create_financial_model():
         ["", ""],
         ["Key Assumptions", ""],
         ["GPU Utilization", "70-80%"],
-        ["Energy Cost", "$0.07/kWh"],
+        ["Energy Cost", "$0.05/kWh"],
         ["Facility Uptime", "85%"],
         ["Bitcoin Price (avg)", "$40,000"],
     ]
@@ -359,12 +361,46 @@ def create_financial_model():
     
     # Set active sheet to summary
     wb.active = summary_ws
+
+    # 7. Financing Options Sheet
+    financing_ws = wb.create_sheet("Financing Options")
+    
+    # Financing options data
+    financing_data = [
+        ["Asset", "Financing Type", "Example Lenders/Platforms", "Notes"],
+        ["Bitcoin (self-mined)", "BTC-backed Line of Credit", "Unchained, Ledn, Local El Salvador Lenders", "Use freshly mined BTC as collateral for stablecoin loans (Liquid USDt)."],
+        ["GPUs (NVIDIA A6000/H100)", "Hardware-backed Leasing", "Coreweave, Lambda, Hydra Host", "Finance GPU acquisition via lease-to-own or sale-leaseback agreements."],
+        ["ASIC Miners (S21/T21)", "Equipment Financing", "Asset-backed loans from crypto-friendly funds", "Use the hardware itself as collateral for financing the purchase."],
+        ["Modular Containers/Infra", "Equipment-based Financing", "Private credit, off-balance sheet leasing", "Collateralize the physical infrastructure for private loans."],
+        ["Forward Sales", "Prepaid GPU Contracts", "Direct sales to AI startups, render farms", "Sell future GPU access at a discount to fund current OpEx and CapEx."],
+        ["Carbon Credits", "Green Financing", "ESG funds, Methane capture grants", "Monetize methane flaring partnerships for carbon credits and grant funding."],
+        ["Sovereign Partnership", "Government Grants/Loans", "El Salvador National Bitcoin Office", "Explore partnerships for building sovereign AI infrastructure, potentially unlocking grants."]
+    ]
+    
+    # Write financing headers
+    for col_idx, header in enumerate(financing_data[0], 1):
+        cell = financing_ws.cell(row=1, column=col_idx, value=header)
+        cell.font = header_font
+        cell.fill = header_fill
+        
+    # Write financing data
+    for row_idx, row_data in enumerate(financing_data[1:], 2):
+        for col_idx, value in enumerate(row_data, 1):
+            cell = financing_ws.cell(row=row_idx, column=col_idx, value=value)
+
+    # Adjust column widths
+    financing_ws.column_dimensions['A'].width = 25
+    financing_ws.column_dimensions['B'].width = 30
+    financing_ws.column_dimensions['C'].width = 40
+    financing_ws.column_dimensions['D'].width = 70
+
     
     return wb
 
 def main():
     """Main function to create and save the financial model"""
     print("Creating GridEdge Compute Center Financial Model...")
+
     
     # Create the workbook
     wb = create_financial_model()
@@ -374,12 +410,12 @@ def main():
     wb.save(filename)
     
     print(f"✅ Financial model saved as {filename}")
-    print("\nPhase I Model includes:")
-    print("- CapEx Breakdown: $3.2M total investment for 2.5MW capacity")
-    print("- Monthly Revenue Forecast: GPU ($40K) + ASIC ($13.5K) + Spa ($2.5K)")
-    print("- Operating Expenses: Energy ($107K), Staff ($15K), Other ($15K)")
+    print("\n5MW Strategic Model includes:")
+    print("- CapEx Breakdown: $6.0M total investment for 5MW capacity")
+    print("- Monthly Revenue Forecast: GPU ($85K) + ASIC ($22.5K) + Spa ($2.5K)")
+    print("- Operating Expenses: Energy ($153K), Staff ($13K), Other ($19K)")
     print("- ROI Timeline: Month-by-month cash flow analysis with break-even")
-    print("- Executive Summary: Phase I key metrics and assumptions")
+    print("- Executive Summary: 5MW strategic deployment metrics")
     print("- Phased Build Plan: Growth roadmap to 15MW+ capacity")
     
     return filename

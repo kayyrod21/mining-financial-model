@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This document outlines the financial assumptions for the GridEdge Compute Center Phase I, a 2.5MW modular hybrid data center in El Salvador combining ASIC mining, GPU leasing, and waste heat reuse, with planned expansion to 5MW+ in future phases. Assumptions are based on industry benchmarks from Crucible Capital's "Building a Datacenter for Dummies – Part I" and adapted for El Salvador's unique geothermal environment.
+This document outlines the financial assumptions for the GridEdge Compute Center, a 5MW strategic deployment combining ASIC mining, GPU leasing, and waste heat reuse. Assumptions are based on industry benchmarks and adapted for El Salvador's geothermal environment. Assumptions are based on industry benchmarks from Crucible Capital's "Building a Datacenter for Dummies – Part I" and adapted for El Salvador's unique geothermal environment.
 
 ## CapEx per kW
 
@@ -62,8 +62,7 @@ Based on Crucible benchmarks and adapted for El Salvador market conditions:
 
 - **Bitcoin Mining**: $8,000-10,000 per month per MW
   - Variable based on Bitcoin price and network difficulty
-  - Assumes $40,000 average Bitcoin price
-  - Phase I 1.5MW capacity = $12,000-15,000 monthly potential
+  - BTC mining revenue reflects a +2-5% premium on virgin Bitcoin sales. We are mining non-KYC, freshly issued BTC, which has higher privacy value and no transaction history. Premium pricing may be available OTC to entities who need 'clean' Bitcoin at the edge. Assumes potential for $17,000 - $18,000/month revenue at 2.5MW
 
 - **Spa Partnership Revenue**: $15,000-25,000 per month
   - Waste heat monetization through wellness center
@@ -74,6 +73,8 @@ Based on Crucible benchmarks and adapted for El Salvador market conditions:
 
 - **Carbon Credits**: $500-1,500 per month
   - Geothermal and solar energy use
+- Methane from trash flaring is available through city/municipality partnership, access ESG funding and Carbon Credits
+
   - Waste heat recovery systems
   - El Salvador carbon market development
 
@@ -110,8 +111,7 @@ Based on Crucible benchmarks and adapted for El Salvador market conditions:
 
 - **Staffing**: $8,000-12,000 per month
   - 24/7 operations team (4-6 people)
-  - Local talent development
-  - Bilingual capabilities for international clients
+  El Salvador benefits from access to skilled technical labor ($600-1,200/month) and support operations ($300-600/month). We assume optimized average labor costs of $13,000/month.
 
 - **Facility Maintenance**: $3,000-5,000 per month
   - Preventive maintenance programs
@@ -240,3 +240,15 @@ Based on Crucible benchmarks and adapted for El Salvador market conditions:
 ---
 
 *This assumptions document will be updated as due diligence progresses and market conditions evolve. All financial projections are preliminary and subject to detailed feasibility analysis.*
+
+## Financing Options
+
+| Asset | Financing Type | Example Lenders/Platforms | Notes |
+|---|---|---|---|
+| Bitcoin (self-mined) | BTC-backed Line of Credit | Unchained, Ledn, Local El Salvador Lenders | Use freshly mined BTC as collateral for stablecoin loans (Liquid USDt). |
+| GPUs (NVIDIA A6000/H100) | Hardware-backed Leasing | Coreweave, Lambda, Hydra Host | Finance GPU acquisition via lease-to-own or sale-leaseback agreements. |
+| ASIC Miners (S21/T21) | Equipment Financing | Asset-backed loans from crypto-friendly funds | Use the hardware itself as collateral for financing the purchase. |
+| Modular Containers/Infra | Equipment-based Financing | Private credit, off-balance sheet leasing | Collateralize the physical infrastructure for private loans. |
+| Forward Sales | Prepaid GPU Contracts | Direct sales to AI startups, render farms | Sell future GPU access at a discount to fund current OpEx and CapEx. |
+| Carbon Credits | Green Financing | ESG funds, Methane capture grants | Monetize methane flaring partnerships for carbon credits and grant funding. |
+| Sovereign Partnership | Government Grants/Loans | El Salvador National Bitcoin Office | Explore partnerships for building sovereign AI infrastructure, potentially unlocking grants. |

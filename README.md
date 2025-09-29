@@ -67,9 +67,9 @@ mining-financial-model/
 
 ### 🐍 Python Scripts
 
-**`create_financial_model.py`** generates the Excel-based financial model for Phase I (2.5MW). Creates worksheets for CapEx breakdown, revenue forecasts, operating expenses, ROI timeline, executive summary, and phased build plan. The model targets $3.2M CapEx with ~$56K monthly revenue and $132K monthly OpEx.
+**`create_financial_model.py`** generates the Excel-based financial model for the GridEdge Compute Center. It creates worksheets for CapEx breakdown, revenue forecasts, operating expenses, ROI timeline, executive summary, phased build plan, and financing options. The model targets ~$6M CapEx with optimized revenue streams and ~$132K monthly OpEx.
 
-**`scripts/generate_capex_chart.py`** reads the Excel model and creates visual charts showing CapEx distribution by category (Equipment, Facility, Power & Cooling, Contingency).
+**`scripts/generate_capex_chart.py`** reads the Excel model and creates visual charts showing CapEx distribution by category (Equipment, Facility, Power & Cooling, Legal/Admin, and Contingency).
 
 **`scripts/generate_roi_chart.py`** creates ROI timeline visualization showing break-even forecast and monthly cash flow analysis over 5 years.
 
