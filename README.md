@@ -11,13 +11,13 @@ El Salvador.
 
 ## 🧠 Project Summary
 
-GridEdge is a **Phase I: 2.5MW modular hybrid compute facility** designed to serve two critical 
-sectors, with planned expansion to 5MW+ in future phases:
+GridEdge is a **Phase I: 5MW modular hybrid compute facility** designed to serve two critical 
+sectors, with planned expansion to 15MW+ in future phases:
 
-- **Bitcoin Mining (ASIC infrastructure):** Daily BTC generation using 
-clean, low-cost energy from El Salvador’s volcano grid.
-- **AI Compute Leasing (GPU infrastructure):** Infrastructure-as-a-Service 
-(IaaS) for researchers, startups, and decentralized AI workloads.
+-   **Bitcoin Mining (ASIC infrastructure):** Daily BTC generation using 
+    clean, low-cost energy from El Salvador’s volcano grid.
+-   **AI Compute Leasing (GPU infrastructure):** Infrastructure-as-a-Service 
+    (IaaS) for researchers, startups, and decentralized AI workloads.
 
 The facility reuses waste heat through a wellness center (hydrotherapy + 
 sauna) reducing OpEx while improving community well-being.
@@ -41,9 +41,9 @@ of traditional VC and surveillance models.
 
 | Component             | Estimated Value      |
 |----------------------|----------------------|
-| Total CapEx (Phase I)| $3.2M USD            |
-| Revenue (GPU Lease)  | $80,000/month        |
-| Revenue (BTC Mining) | $8–10K/month per MW  |
+| Total CapEx (Phase I)| $6.2M USD            |
+| Revenue (GPU Lease)  | $85,000/month        |
+| Revenue (BTC Mining) | $17,000 - $18,000/month |
 | Break-even Timeline  | ~3.5 years (base case) |
 
 Power source mix: **70% Geothermal** + **Solar Redundancy** + **Grid 
@@ -77,10 +77,10 @@ mining-financial-model/
 
 The following charts are auto-generated from the financial model:
 
-- **[CapEx Breakdown](graphs/capex_breakdown.png)** - Investment distribution pie chart
-- **[CapEx Detailed](graphs/capex_detailed.png)** - Detailed cost breakdown by category  
-- **[ROI Timeline](graphs/roi_chart.png)** - Break-even forecast and cumulative cash flow
-- **[Cash Flow Analysis](graphs/cashflow_detailed.png)** - Monthly revenue vs expenses breakdown
+-   **[CapEx Breakdown](graphs/capex_breakdown.png)** - Investment distribution pie chart
+-   **[CapEx Detailed](graphs/capex_detailed.png)** - Detailed cost breakdown by category
+-   **[ROI Timeline](graphs/roi_chart.png)** - Break-even forecast and cumulative cash flow
+-   **[Cash Flow Analysis](graphs/cashflow_detailed.png)** - Monthly revenue vs expenses breakdown
 
 *Note: Charts reflect Phase I model assumptions. Current projections show challenging cash flow - model may need revenue optimization or OpEx reduction.*
 
@@ -88,10 +88,24 @@ The following charts are auto-generated from the financial model:
 
 ## ⚙️ Next Steps
 
-- Clone this repo and update the Excel model for your own region or scale
-- Run the chart scripts to generate visuals for investor decks
-- Fork or contribute if you're building similar infrastructure in a 
-sovereign context
+-   Clone this repo and update the Excel model for your own region or scale
+-   Run the chart scripts to generate visuals for investor decks
+-   Fork or contribute if you’re building similar infrastructure in a 
+    sovereign context
+
+---
+
+## 💰 Financing Options
+
+| Asset | Financing Type | Example Lenders/Platforms | Notes |
+|---|---|---|---|
+| Bitcoin (self-mined) | BTC-backed Line of Credit | Unchained, Ledn, Local El Salvador Lenders | Use freshly mined BTC as collateral for stablecoin loans (Liquid USDt). |
+| GPUs (NVIDIA A6000/H100) | Hardware-backed Leasing | Coreweave, Lambda, Hydra Host | Finance GPU acquisition via lease-to-own or sale-leaseback agreements. |
+| ASIC Miners (S21/T21) | Equipment Financing | Asset-backed loans from crypto-friendly funds | Use the hardware itself as collateral for financing the purchase. |
+| Modular Containers/Infra | Equipment-based Financing | Private credit, off-balance sheet leasing | Collateralize the physical infrastructure for private loans. |
+| Forward Sales | Prepaid GPU Contracts | Direct sales to AI startups, render farms | Sell future GPU access at a discount to fund current OpEx and CapEx. |
+| Carbon Credits | Green Financing | ESG funds, Methane capture grants | Monetize methane flaring partnerships for carbon credits and grant funding. |
+| Sovereign Partnership | Government Grants/Loans | El Salvador National Bitcoin Office | Explore partnerships for building sovereign AI infrastructure, potentially unlocking grants. |
 
 ---
 
@@ -107,6 +121,5 @@ Founder, Bitcoin Mining Consulting LLC
 ## 📜 License
 
 **Creative Commons BY-NC-SA 4.0**  
-> You may remix, adapt, and build upon this work **non-commercially**, as 
-long as you credit and license your new creations under the same terms.
-
+>   You may remix, adapt, and build upon this work **non-commercially**, as 
+    long as you credit and license your new creations under the same terms.

@@ -243,7 +243,7 @@ def create_financial_model():
     summary_ws = wb.create_sheet("Executive Summary")
     
     # 5MW Strategic Key metrics
-    total_capex = 6000000
+    total_capex = 6200000
     avg_monthly_revenue = sum(row[4] for row in revenue_data[:12]) / 12
     avg_monthly_opex = sum(row[7] for row in opex_data[:12]) / 12
     monthly_net_cashflow = avg_monthly_revenue - avg_monthly_opex
@@ -256,7 +256,7 @@ def create_financial_model():
             break
     
     summary_data = [
-        ["GridEdge Compute Center - 5MW Strategic Deployment", ""],
+        ["GridEdge Compute Center - Phase I 5MW Modular Launch", ""],
         ["", ""],
         ["Investment Overview", ""],
         ["Total CapEx", total_capex],
