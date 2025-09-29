@@ -12,16 +12,16 @@ import numpy as np
 import os
 from datetime import datetime, timedelta
 
-def read_roi_data(excel_file):
+def read_roi_data(excel_file, sheet_name="ROI Timeline"):
     """Read ROI timeline data from the Excel file"""
     
     # Load the workbook and get the ROI Timeline sheet
     wb = load_workbook(excel_file)
-    ws = wb["ROI Timeline"]
+    ws = wb[sheet_name]
     
     # Extract data from the worksheet
     data = []
-    for row in ws.iter_rows(min_row=2, values_only=True):  # Skip header
+    for row in ws.iter_rows(min_row=2, values_only=True):
         if row[0] and row[4]:  # Check if we have month and cumulative cash flow
             data.append({
                 'month': row[0],
@@ -37,18 +37,16 @@ def read_roi_data(excel_file):
     df = pd.DataFrame(data)
     return df
 
-def create_roi_chart(df, output_path):
+def create_roi_chart(df, output_path, chart_title="GridEdge Phase I - 5MW Break-even Forecast"):
     """Create ROI timeline chart showing break-even forecast"""
     
-    # Create figure with larger size for better readability
     fig, ax = plt.subplots(figsize=(14, 8))
     
-    # Convert month strings to numeric values for plotting
     month_numbers = range(1, len(df) + 1)
     
     # Plot cumulative cash flow
-    line = ax.plot(month_numbers, df['cumulative_cf'] / 1000000, 
-                   linewidth=3, color='#1f4e79', label='Cumulative Cash Flow')
+    ax.plot(month_numbers, df['cumulative_cf'] / 1000000, 
+            linewidth=3, color='#1f4e79', label='Cumulative Cash Flow')
     
     # Add horizontal line at y=0 (break-even)
     ax.axhline(y=0, color='red', linestyle='--', linewidth=2, alpha=0.7, label='Break-even Line')
@@ -69,9 +67,10 @@ def create_roi_chart(df, output_path):
                 label=f'Break-even: Month {break_even_month}')
         
         # Add annotation
-        ax.annotate(f'Break-even\nMonth {break_even_month}', 
+        ax.annotate(f'Break-even
+Month {break_even_month}', 
                    xy=(break_even_month, break_even_cf),
-                   xytext=(break_even_month + 6, break_even_cf + 0.5),
+                   xytext=(break_even_month + 1, break_even_cf + 0.5),
                    arrowprops=dict(arrowstyle='->', color='green', lw=2),
                    fontsize=11, fontweight='bold', color='green',
                    bbox=dict(boxstyle="round,pad=0.3", facecolor='lightgreen', alpha=0.7))
@@ -85,7 +84,9 @@ def create_roi_chart(df, output_path):
                 label=f'Maximum Loss: Month {min_cf_month}')
         
         # Add annotation
-        ax.annotate(f'Maximum Loss\nMonth {min_cf_month}\n${min_cf_value:.1f}M', 
+        ax.annotate(f'Maximum Loss
+Month {min_cf_month}
+${min_cf_value:.1f}M', 
                    xy=(min_cf_month, min_cf_value),
                    xytext=(min_cf_month + 6, min_cf_value - 0.5),
                    arrowprops=dict(arrowstyle='->', color='red', lw=2),
@@ -95,7 +96,7 @@ def create_roi_chart(df, output_path):
     # Customize the chart
     ax.set_xlabel('Month', fontsize=12, fontweight='bold')
     ax.set_ylabel('Cumulative Cash Flow (Millions USD)', fontsize=12, fontweight='bold')
-    ax.set_title('GridEdge Phase I – Break-even Forecast\n2.5MW Modular Data Center', 
+    ax.set_title(chart_title, 
                  fontsize=16, fontweight='bold', pad=20)
     
     # Add grid for easier reading
@@ -104,7 +105,7 @@ def create_roi_chart(df, output_path):
     # Format x-axis
     ax.set_xlim(0, len(df) + 2)
     year_ticks = list(range(0, len(df) + 1, 12))
-    ax.set_xticks(year_ticks)  # Show every 12 months
+    ax.set_xticks(year_ticks)
     ax.set_xticklabels([f'Year {i}' if i > 0 else 'Start' for i in range(len(year_ticks))])
     
     # Add minor ticks for months
@@ -125,7 +126,7 @@ def create_roi_chart(df, output_path):
 • Final Cash Flow: ${final_cf:.1f}M
 • ROI: {final_roi:.1f}%
 • Avg Monthly Net: ${avg_monthly_net/1000:.0f}K
-• CapEx: $3.2M"""
+• CapEx: $6.2M"""
     
     ax.text(0.02, 0.98, summary_text, transform=ax.transAxes, 
             verticalalignment='top', fontsize=10,
@@ -174,9 +175,8 @@ def create_detailed_cashflow_chart(df, output_path):
     # Format x-axis for both charts
     for ax in [ax1, ax2]:
         ax.set_xlim(0, len(df) + 1)
-        year_ticks = list(range(0, len(df) + 1, 12))
-        ax.set_xticks(year_ticks)
-        ax.set_xticklabels([f'Y{i}' if i > 0 else 'Start' for i in range(len(year_ticks))])
+        ax.set_xticks(range(0, len(df) + 1, 12))
+        ax.set_xticklabels([f'Y{i}' if i > 0 else 'Start' for i in range(0, len(df) // 12 + 2)])
     
     plt.tight_layout()
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
@@ -190,7 +190,7 @@ def main():
     # File paths
     excel_file = "financial_model.xlsx"
     graphs_dir = "graphs"
-    roi_chart_path = os.path.join(graphs_dir, "roi_chart.png")
+    roi_chart_path = os.path.join(graphs_dir, "roi_chart_phase1_5mw.png")
     detailed_chart_path = os.path.join(graphs_dir, "cashflow_detailed.png")
     
     # Check if Excel file exists
@@ -205,21 +205,19 @@ def main():
     
     try:
         # Read data from Excel
-        df = read_roi_data(excel_file)
+        df = read_roi_data(excel_file, "ROI Timeline")
         print(f"📊 Loaded {len(df)} months of ROI data from Excel")
         
         # Generate main ROI chart
-        fig1, break_even_month = create_roi_chart(df, roi_chart_path)
+        fig1, break_even_month = create_roi_chart(df, roi_chart_path, chart_title="GridEdge Phase I - 5MW Break-even Forecast")
         
-        # Generate detailed cash flow chart
-        fig2 = create_detailed_cashflow_chart(df, detailed_chart_path)
-        
-        print("\n🎯 Chart generation complete!")
+        print("
+🎯 Chart generation complete!")
         print(f"   • ROI timeline: {roi_chart_path}")
-        print(f"   • Cash flow detail: {detailed_chart_path}")
         
         # Display key insights
-        print("\n💡 Key Insights:")
+        print("
+💡 Key Insights:")
         if break_even_month:
             print(f"   • Break-even achieved: Month {break_even_month}")
             years = break_even_month // 12
