@@ -71,6 +71,19 @@ mining-financial-model/
 
 **`scripts/generate_capex_chart.py`** reads the Excel model and creates visual charts showing CapEx distribution by category (Equipment, Facility, Power & Cooling, Contingency).
 
+**`scripts/generate_roi_chart.py`** creates ROI timeline visualization showing break-even forecast and monthly cash flow analysis over 5 years.
+
+## 📈 Visuals
+
+The following charts are auto-generated from the financial model:
+
+- **[CapEx Breakdown](graphs/capex_breakdown.png)** - Investment distribution pie chart
+- **[CapEx Detailed](graphs/capex_detailed.png)** - Detailed cost breakdown by category  
+- **[ROI Timeline](graphs/roi_chart.png)** - Break-even forecast and cumulative cash flow
+- **[Cash Flow Analysis](graphs/cashflow_detailed.png)** - Monthly revenue vs expenses breakdown
+
+*Note: Charts reflect Phase I model assumptions. Current projections show challenging cash flow - model may need revenue optimization or OpEx reduction.*
+
 ---
 
 ## ⚙️ Next Steps
