@@ -54,13 +54,18 @@ Backup**
 ## 📊 What’s Inside This Repo
 ```bash
 mining-financial-model/
-├── financial_model.xlsx ← Main spreadsheet (CapEx, ROI, Rev Forecast)
-├── assumptions.md ← Key inputs & economic scenarios
-├── graphs/ ← Auto-generated charts (PNG/HTML)
-├── scripts/ ← Python scripts to generate visual charts
-├── presentation/ ← Pitch deck (PDF, Canva or Figma exports)
-└── README.md ← This file
+├── create_financial_model.py         ← Script to generate financial_model.xlsx
+├── financial_model.xlsx              ← Output file with CapEx, revenue, ROI, and summary
+├── assumptions.md                     ← Key inputs & economic scenarios
+├── graphs/                           ← (to-be-created) folder for chart images
+├── scripts/                          ← Python scripts to generate visual charts
+├── presentation/                     ← Pitch deck (PDF, Canva or Figma exports)
+└── README.md                         ← This file
 ```
+
+### 🐍 Python Scripts
+
+**`create_financial_model.py`** is used to generate the Excel-based financial model based on our assumptions. It creates comprehensive worksheets including CapEx breakdown, revenue forecasts, operating expenses, and ROI timeline analysis. Run this script to regenerate the financial model with updated assumptions.
 
 ---
 
