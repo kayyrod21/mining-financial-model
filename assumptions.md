@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This document outlines the financial assumptions for the GridEdge Compute Center, a 5MW hybrid data center in El Salvador combining ASIC mining, GPU leasing, and waste heat reuse. Assumptions are based on industry benchmarks from Crucible Capital's "Building a Datacenter for Dummies – Part I" and adapted for El Salvador's unique geothermal environment.
+This document outlines the financial assumptions for the GridEdge Compute Center Phase I, a 2.5MW modular hybrid data center in El Salvador combining ASIC mining, GPU leasing, and waste heat reuse, with planned expansion to 5MW+ in future phases. Assumptions are based on industry benchmarks from Crucible Capital's "Building a Datacenter for Dummies – Part I" and adapted for El Salvador's unique geothermal environment.
 
 ## CapEx per kW
 
@@ -63,7 +63,7 @@ Based on Crucible benchmarks and adapted for El Salvador market conditions:
 - **Bitcoin Mining**: $8,000-10,000 per month per MW
   - Variable based on Bitcoin price and network difficulty
   - Assumes $40,000 average Bitcoin price
-  - 5MW capacity = $40,000-50,000 monthly potential
+  - Phase I 1.5MW capacity = $12,000-15,000 monthly potential
 
 - **Spa Partnership Revenue**: $15,000-25,000 per month
   - Waste heat monetization through wellness center

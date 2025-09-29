@@ -11,8 +11,8 @@ El Salvador.
 
 ## 🧠 Project Summary
 
-GridEdge is a 5MW hybrid compute facility designed to serve two critical 
-sectors:
+GridEdge is a **Phase I: 2.5MW modular hybrid compute facility** designed to serve two critical 
+sectors, with planned expansion to 5MW+ in future phases:
 
 - **Bitcoin Mining (ASIC infrastructure):** Daily BTC generation using 
 clean, low-cost energy from El Salvador’s volcano grid.
@@ -57,7 +57,9 @@ mining-financial-model/
 ├── create_financial_model.py         ← Script to generate financial_model.xlsx
 ├── financial_model.xlsx              ← Output file with CapEx, revenue, ROI, and summary
 ├── assumptions.md                     ← Key inputs & economic scenarios
-├── graphs/                           ← (to-be-created) folder for chart images
+├── graphs/                           ← Auto-generated chart images (CapEx, ROI, etc.)
+│   ├── capex_breakdown.png           ← CapEx pie chart  
+│   └── capex_detailed.png            ← CapEx detailed bar chart
 ├── scripts/                          ← Python scripts to generate visual charts
 ├── presentation/                     ← Pitch deck (PDF, Canva or Figma exports)
 └── README.md                         ← This file
@@ -65,7 +67,9 @@ mining-financial-model/
 
 ### 🐍 Python Scripts
 
-**`create_financial_model.py`** is used to generate the Excel-based financial model based on our assumptions. It creates comprehensive worksheets including CapEx breakdown, revenue forecasts, operating expenses, and ROI timeline analysis. Run this script to regenerate the financial model with updated assumptions.
+**`create_financial_model.py`** generates the Excel-based financial model for Phase I (2.5MW). Creates worksheets for CapEx breakdown, revenue forecasts, operating expenses, ROI timeline, executive summary, and phased build plan. The model targets $3.2M CapEx with ~$56K monthly revenue and $132K monthly OpEx.
+
+**`scripts/generate_capex_chart.py`** reads the Excel model and creates visual charts showing CapEx distribution by category (Equipment, Facility, Power & Cooling, Contingency).
 
 ---
 
